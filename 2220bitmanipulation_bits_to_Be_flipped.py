@@ -18,8 +18,8 @@
 start = 10
 goal = 7
 count=0
-check=start^goal
+check=start^goal#using the xor method as in xor if the number of 1s are even then it gives 0 and number of 1s are odd its gives 1 as output so in order to count the bits flipped we have used xor
 for i in range(32):
-    if check&(1<<i)!=0:
+    if check&(1<<i)!=0:#using check and 1leftshift i that means it will check every bit upto 31st bit and add up number of in output to our count and gives us count as our required output
         count+=1
 print(count)
