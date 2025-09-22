@@ -28,16 +28,22 @@
 #     print(f"{eg} is an happy number as it ends down to 1 only")
 # else:print(f"{eg} is not a happy number")
 
-num = 19 
-for j in range(5):
-    sum=0
-    for i in (str(num)):
-        i=int(i)
-        val=i*i
-        sum+=val
-    num=sum
-    if sum==1:
-        return True
-    else:
-        return False
-    print(sum)
+def sumofsquare(n):
+    output=0
+    while n:
+        digit=n%10#takes n and give the remainder which is the right most number
+        digit=digit**2#then the number is being squared 
+        output+=digit#and then it get added to a output variable
+        n=n//10#and before again getting out of the loop the number floor divided in order to remove the number which was being squared 
+    return output
+def mainfun(n):
+    visit=set()#creating a set for thhis or a hashmap as in to check we have seen or visited the number before hand or not
+    while n not in visit:
+        visit.add(n)#if not visited by us then we add it to our set
+        n=sumofsquare(n)#usng a helper function in order to give the sum of square of the number 
+        if n==1:#and upon getting the final n we check its value for the happy number condition 
+            return True
+    return False
+n=19
+check=mainfun(n)
+print(check)
