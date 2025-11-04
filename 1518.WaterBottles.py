@@ -8,4 +8,4 @@ while True:
     numBottles=empty
     if numBottles<numExchange:
         break
-print(sum)x
+print(sum)
